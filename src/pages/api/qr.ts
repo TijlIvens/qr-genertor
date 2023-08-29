@@ -11,7 +11,7 @@ export default async function handler(
 ) {
   const data: string = req.body.data;
 
-  const code = await QRCode.toString(data);
+  const code = await QRCode.toDataURL(data);
 
   res.status(200).json({ qrString: code });
 }
